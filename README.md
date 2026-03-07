@@ -5,8 +5,11 @@ This repository contains models necessarily use by [ppu-paddle-ocr](https://gith
 The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
 ```ts
-export const GITHUB_BASE_URL =
+export const MODEL_BASE_URL =
   "https://media.githubusercontent.com/media/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
+
+export const DICT_BASE_URL =
+  "https://raw.githubusercontent.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
 ```
 
 # File tree
