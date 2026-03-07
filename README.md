@@ -46,13 +46,9 @@ export const GITHUB_BASE_URL =
     │   │       └── ppocrv5_el_dict.txt
     │   ├── en
     │   │   ├── v4
-    │   │   │   ├── PP-OCRv4_mobile_rec_infer.onnx
-    │   │   │   ├── PP-OCRv4_server_rec_doc_infer.onnx
-    │   │   │   ├── PP-OCRv4_server_rec_infer.onnx
     │   │   │   ├── en_PP-OCRv4_mobile_rec_infer.onnx
     │   │   │   └── en_dict.txt
     │   │   └── v5
-    │   │       ├── PP-OCRv5_server_rec_infer.onnx
     │   │       ├── en_PP-OCRv5_mobile_rec_infer.onnx
     │   │       └── ppocrv5_en_dict.txt
     │   ├── eslav
@@ -83,7 +79,8 @@ export const GITHUB_BASE_URL =
     │       └── v5
     │           ├── ppocrv5_th_dict.txt
     │           └── th_PP-OCRv5_mobile_rec_infer.onnx
-    ├── ppocr_keys_v1.txt
+    ├── ppocrv3_dict.txt
+    ├── ppocrv4_dict.txt
     ├── ppocrv4_doc_dict.txt
     └── ppocrv5_dict.txt
 ```
