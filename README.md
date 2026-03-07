@@ -6,7 +6,7 @@ The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
 ```ts
 export const GITHUB_BASE_URL =
-  "https://raw.githubusercontent.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main/";
+  "https://media.githubusercontent.com/media/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
 ```
 
 # File tree
