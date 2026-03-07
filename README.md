@@ -1,6 +1,6 @@
 # ppu-paddle-ocr-models
 
-This repository contains models necessarily use by (ppu-paddle-ocr)[https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr] library.
+This repository contains models necessarily use by [ppu-paddle-ocr](https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr) library.
 
 The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
