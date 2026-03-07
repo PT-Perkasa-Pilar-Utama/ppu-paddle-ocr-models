@@ -9,6 +9,72 @@ export const GITHUB_BASE_URL =
   "https://raw.githubusercontent.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main/";
 ```
 
+# File tree
+
+```bash
+.
+├── detection
+│   ├── PP-OCRv4_mobile_det_infer.onnx
+│   ├── PP-OCRv4_server_det_infer.onnx
+│   ├── PP-OCRv5_mobile_det_infer.onnx
+│   └── PP-OCRv5_server_det_infer.onnx
+├── dictionary
+│   ├── ppocrv4_doc_dict.txt
+│   └── ppocrv5_dict.txt
+└── recognition
+    ├── arabic
+    │   └── v5
+    │       ├── arabic_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_arabic_dict.txt
+    ├── cyrillic
+    │   └── v5
+    │       ├── cyrillic_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_cyrillic_dict.txt
+    ├── devanagari
+    │   └── v5
+    │       ├── devanagari_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_devanagari_dict.txt
+    ├── el
+    │   └── v5
+    │       ├── el_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_el_dict.txt
+    ├── en
+    │   ├── v4
+    │   │   ├── PP-OCRv4_mobile_rec_infer.onnx
+    │   │   ├── PP-OCRv4_server_rec_doc_infer.onnx
+    │   │   ├── PP-OCRv4_server_rec_infer.onnx
+    │   │   ├── en_PP-OCRv4_mobile_rec_infer.onnx
+    │   │   └── en_dict.txt
+    │   └── v5
+    │       ├── PP-OCRv5_server_rec_infer.onnx
+    │       ├── en_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_en_dict.txt
+    ├── eslav
+    │   └── v5
+    │       ├── eslav_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_eslav_dict.txt
+    ├── korean
+    │   └── v5
+    │       ├── korean_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_korean_dict.txt
+    ├── latin
+    │   └── v5
+    │       ├── latin_PP-OCRv5_mobile_rec_infer.onnx
+    │       └── ppocrv5_latin_dict.txt
+    ├── ta
+    │   └── v5
+    │       ├── ppocrv5_ta_dict.txt
+    │       └── ta_PP-OCRv5_mobile_rec_infer.onnx
+    ├── te
+    │   └── v5
+    │       ├── ppocrv5_te_dict.txt
+    │       └── te_PP-OCRv5_mobile_rec_infer.onnx
+    └── th
+        └── v5
+            ├── ppocrv5_th_dict.txt
+            └── th_PP-OCRv5_mobile_rec_infer.onnx
+```
+
 # Models and Their Supported Languages
 
 | Model                          | Supported Languages                                                                                                                                                                                                                                                                                                                                                                                                                                       |
