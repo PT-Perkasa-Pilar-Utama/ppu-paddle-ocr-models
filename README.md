@@ -2,6 +2,8 @@
 
 This repository contains models necessarily use by [ppu-paddle-ocr](https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr) library.
 
+It consists of layout models, text detection models, and text recognition models.
+
 The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
 ```ts
@@ -18,6 +20,9 @@ export const DICT_BASE_URL =
 .
 ├── LICENSE
 ├── README.md
+├── layout
+│   ├── PP-DocLayoutV2.onnx
+│   ├── PP-DocLayoutV2_labels.txt
 ├── detection
 │   ├── PP-OCRv4_mobile_det_infer.onnx
 │   ├── PP-OCRv4_server_det_infer.onnx
