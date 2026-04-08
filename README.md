@@ -20,6 +20,11 @@ export const DICT_BASE_URL =
 .
 ├── LICENSE
 ├── README.md
+├── correction
+│   ├── PP-LCNet_x0_25_textline_ori.onnx
+│   ├── PP-LCNet_x1_0_doc_ori.onnx
+│   ├── PP-LCNet_x1_0_textline_ori.onnx
+│   └── UVDoc.onnx
 ├── layout
 │   ├── PP-DocLayoutV2.onnx
 │   ├── PP-DocLayoutV2_labels.txt
@@ -95,7 +100,7 @@ export const DICT_BASE_URL =
                 └── th_PP-OCRv5_mobile_rec_infer.onnx
 ```
 
-# Models and Their Supported Languages
+# OCR Models and Their Supported Languages
 
 | Model                          | Supported Languages                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,3 +115,33 @@ export const DICT_BASE_URL =
 | devanagari_PP-OCRv5_mobile_rec | Hindi, Marathi, Nepali, Bihari, Maithili, Angika, Bhojpuri, Magahi, Santali, Newari, Konkani, Sanskrit, Haryanvi, English                                                                                                                                                                                                                                                                                                                                 |
 | ta_PP-OCRv5_mobile_rec         | Tamil, English                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | te_PP-OCRv5_mobile_rec         | Telugu, English                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+# Layout models
+
+Model use for document layout analysis includes 20 common categories: document title, paragraph title, text, page number, abstract, table, references, footnotes, header, footer, algorithm, formula, formula number, image, table, seal, figure_table title, chart, and sidebar text and lists of references
+
+- PP-DocLayoutV2
+- PP-DocLayoutV3
+
+We only converted the layout analysis model, which by default already implemented layout detection. The difference is that layout analysis model doing extra for analyze the reading order. If you want an individual model that just do the layout detection, go check out: https://paddlepaddle.github.io/PaddleX/latest/en/module_usage/tutorials/ocr_modules/layout_detection.html#ii-supported-model-list
+
+# Correction models
+
+## Document Image Orientation Classification
+
+The document image orientation classification module is aim to distinguish the orientation of document images and correct them through post-processing.
+
+- PP-LCNet_x1_0_doc_ori
+
+## Text Image Unwarping
+
+Perform geometric transformations on images in order to correct issues such as document distortion, tilt, perspective deformation, etc., enabling more accurate recognition by subsequent text recognition modules.
+
+- UVDoc
+
+## Text Line Orientation Classification
+
+The text line orientation classification module primarily distinguishes the orientation of text lines and corrects them using post-processing.
+
+- PP-LCNet_x0_25_textline_ori
+- PP-LCNet_x1_0_textline_ori
