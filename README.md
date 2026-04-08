@@ -35,6 +35,11 @@ export const DICT_BASE_URL =
 │   ├── PP-OCRv4_server_det_infer.onnx
 │   ├── PP-OCRv5_mobile_det_infer.onnx
 │   └── PP-OCRv5_server_det_infer.onnx
+├── table
+│   ├── PP-LCNet_x1_0_table_cls.onnx
+│   ├── RT-DETR-L_wired_table_cell_det.onnx
+│   ├── RT-DETR-L_wireless_table_cell_det.onnx
+│   └── SLANet_plus.onnx
 └── recognition
     ├── PP-OCRv3_mobile_rec_infer.onnx
     ├── PP-OCRv4_mobile_rec_infer.onnx
@@ -145,3 +150,18 @@ The text line orientation classification module primarily distinguishes the orie
 
 - PP-LCNet_x0_25_textline_ori
 - PP-LCNet_x1_0_textline_ori
+
+# Table models
+
+## Table Structure Recognition
+
+- SLANet_plus
+
+## Table Classification
+
+- PP-LCNet_x1_0_table_cls
+
+## Table Cell Detection
+
+- RT-DETR-L_wired_table_cell_det
+- RT-DETR-L_wireless_table_cell_det
