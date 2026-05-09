@@ -6,6 +6,8 @@ It consists of layout models, text detection models, and text recognition models
 
 The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
+`.ort` files are the same models pre-serialised in ONNX Runtime's native FlatBuffers format. They load 3-5x faster than the equivalent `.onnx` (session creation drops from ~24 ms to ~7 ms on M1) while producing byte-identical output. Load them with `session: { graphOptimizationLevel: "disabled" }` so ORT doesn't re-optimise the already-optimised graph.
+
 ```ts
 export const MODEL_BASE_URL =
   "https://media.githubusercontent.com/media/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
@@ -34,6 +36,7 @@ export const DICT_BASE_URL =
 │   ├── PP-OCRv4_mobile_det_infer.onnx
 │   ├── PP-OCRv4_server_det_infer.onnx
 │   ├── PP-OCRv5_mobile_det_infer.onnx
+│   ├── PP-OCRv5_mobile_det_infer.ort
 │   └── PP-OCRv5_server_det_infer.onnx
 ├── table
 │   ├── PP-LCNet_x1_0_table_cls.onnx
@@ -74,7 +77,9 @@ export const DICT_BASE_URL =
         │   │   └── en_dict.txt
         │   └── v5
         │       ├── en_PP-OCRv5_mobile_rec_infer_int8.onnx
+        │       ├── en_PP-OCRv5_mobile_rec_infer_int8.ort
         │       ├── en_PP-OCRv5_mobile_rec_infer.onnx
+        │       ├── en_PP-OCRv5_mobile_rec_infer.ort
         │       └── ppocrv5_en_dict.txt
         ├── eslav
         │   └── v5
