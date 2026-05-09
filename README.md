@@ -73,6 +73,7 @@ export const DICT_BASE_URL =
         │   │   ├── en_PP-OCRv4_mobile_rec_infer.onnx
         │   │   └── en_dict.txt
         │   └── v5
+        │       ├── en_PP-OCRv5_mobile_rec_infer_int8.onnx
         │       ├── en_PP-OCRv5_mobile_rec_infer.onnx
         │       └── ppocrv5_en_dict.txt
         ├── eslav
