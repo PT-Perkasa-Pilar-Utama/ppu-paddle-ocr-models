@@ -2,6 +2,9 @@
 
 This repository contains models necessarily use by [ppu-paddle-ocr](https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr) library.
 
+>[!IMPORTANT]
+> We've just added Paddle OCR's PP-OCRv6 model family
+
 It consists of layout models, text detection models, and text recognition models.
 
 The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
