@@ -131,7 +131,8 @@ export const DICT_BASE_URL =
 │   ├── ppocrv4_dict.txt
 │   ├── ppocrv4_doc_dict.txt
 │   ├── ppocrv5_dict.txt
-│   └── ppocrv6_dict.txt
+│   ├── ppocrv6_dict.txt
+│   └── ppocrv6_tiny_dict.txt
 └── table
     ├── PP-LCNet_x1_0_table_cls.onnx
     ├── RT-DETR-L_wired_table_cell_det.onnx
