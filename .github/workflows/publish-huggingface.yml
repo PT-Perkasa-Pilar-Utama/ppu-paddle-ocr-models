@@ -1,0 +1,55 @@
+name: Publish to Hugging Face
+
+# Mirrors the model tree to the Hugging Face Hub, which serves the files over a
+# CDN instead of Git LFS. The LFS copies stay where they are: every published
+# ppu-paddle-ocr version resolves its models from the LFS URLs at runtime, so
+# removing them would break already-installed releases.
+#
+# Requires an HF_TOKEN secret: a write token for the target repo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      hf_repo:
+        description: Target Hugging Face repo
+        required: true
+        default: snowfluke/ppu-paddle-ocr-models
+      dry_run:
+        description: List what would be uploaded, upload nothing
+        type: boolean
+        default: false
+
+concurrency:
+  group: publish-huggingface
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out with LFS payloads
+        uses: actions/checkout@v5
+        with:
+          lfs: true
+
+      - name: Report tree size
+        run: |
+          echo "Files to mirror:"
+          find . -path ./.git -prune -o -type f -print | wc -l
+          du -sh --exclude=.git .
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet "huggingface_hub>=0.34"
+
+      - name: Upload
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO: ${{ inputs.hf_repo }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: python .github/scripts/publish_huggingface.py
