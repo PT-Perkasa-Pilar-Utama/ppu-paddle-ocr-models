@@ -11,13 +11,37 @@ The models are onnx sourced from https://www.paddleocr.ai/main/en/index.html.
 
 `.ort` files are the same models pre-serialised in ONNX Runtime's native FlatBuffers format. They load 3-5x faster than the equivalent `.onnx` (session creation drops from ~24 ms to ~7 ms on M1) while producing byte-identical output. Load them with `session: { graphOptimizationLevel: "disabled" }` so ORT doesn't re-optimise the already-optimised graph.
 
+## Where to fetch from
+
+Fetch from the **Hugging Face mirror**. It serves models and dictionaries from one CDN-backed base, and unlike Git LFS it has no bandwidth budget that can run out and cut off downloads.
+
+```
+https://huggingface.co/snowfluke/ppu-paddle-ocr-models/resolve/main
+```
+
+Paths are identical on both hosts, so the base is the only part that changes:
+
 ```ts
+const BASE = "https://huggingface.co/snowfluke/ppu-paddle-ocr-models/resolve/main";
+
+const detection = `${BASE}/detection/ort/PP-OCRv6_tiny_det.ort`;
+const recognition = `${BASE}/recognition/ort/PP-OCRv6_tiny_rec.ort`;
+const dictionary = `${BASE}/recognition/ppocrv6_dict.txt`;
+```
+
+The GitHub copies stay available, because every published `ppu-paddle-ocr` version resolves them at runtime:
+
+```ts
+// Git LFS, subject to a bandwidth budget
 export const MODEL_BASE_URL =
   "https://media.githubusercontent.com/media/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
 
+// plain files, not LFS
 export const DICT_BASE_URL =
   "https://raw.githubusercontent.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr-models/main";
 ```
+
+This repository is the source of truth. The mirror is refreshed by the `Publish to Hugging Face` workflow, which uploads only what changed.
 
 # File tree
 
